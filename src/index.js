@@ -2,14 +2,16 @@ import { createServer } from 'node:http';
 import { parse } from 'node:url';
 import { readFile } from 'node:fs/promises';
 
+const pagesPath = './pages'
+
 createServer(async (req, res) => {
   const url = parse(req.url, true);
   const filename = url.pathname === '/' ? '/index.html' : url.pathname + '.html'
-  const fileUrl = './pages' + filename;
-  const errorPage = './pages/404.html';
+  const filePath = pagesPath + filename;
+  const errorPage = pagesPath + '/404.html';
 
   try {
-    const data = await readFile(fileUrl);
+    const data = await readFile(filePath);
     res.writeHead(200, {"Content-Type": "text/html"});
     res.end(data);
   } catch(err) {
