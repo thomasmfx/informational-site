@@ -1,14 +1,16 @@
 import { createServer } from 'node:http';
 import { parse } from 'node:url';
 import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
-const pagesPath = './pages'
+const PORT = 8080;
+const pagesPath = './src/pages'
 
 createServer(async (req, res) => {
   const url = parse(req.url, true);
   const filename = url.pathname === '/' ? '/index.html' : url.pathname + '.html'
-  const filePath = pagesPath + filename;
-  const errorPage = pagesPath + '/404.html';
+  const filePath = join(pagesPath, filename)
+  const errorPage = join(pagesPath, '/404.html');
 
   try {
     const data = await readFile(filePath);
@@ -24,4 +26,6 @@ createServer(async (req, res) => {
       res.end('Erro interno');
     }
   }
-}).listen(8080);
+}).listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`)
+});
