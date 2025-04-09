@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply bg-indigo-700 hover:bg-indigo-800 rounded-lg py-2.5 w-[120px] text-white font-bold;
+}
+
+.heading {
+  @apply text-indigo-700 font-bold text-6xl text-center;
+}
+
+.main {
+  @apply container min-w-full p-10 min-h-screen grid justify-center items-center;
+}
