@@ -596,8 +596,20 @@ video {
   display: grid;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-x-10 {
@@ -623,7 +635,10 @@ video {
 }
 
 .btn {
+  display: flex;
   width: 120px;
+  cursor: pointer;
+  justify-content: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity, 1));

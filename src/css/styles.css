@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn {
-  @apply bg-indigo-700 hover:bg-indigo-800 rounded-lg py-2.5 w-[120px] text-white font-bold;
+  @apply bg-indigo-700 hover:bg-indigo-800 rounded-lg py-2.5 w-[120px] text-white font-bold flex justify-center cursor-pointer;
 }
 
 .heading {

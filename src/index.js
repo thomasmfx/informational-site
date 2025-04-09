@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { parse } from 'node:url';
 import { readFile } from 'node:fs/promises';
-import { join, extname } from 'node:path';
+import { join } from 'node:path';
 
 const PORT = 8080;
 const pagesPath = './src/pages';
